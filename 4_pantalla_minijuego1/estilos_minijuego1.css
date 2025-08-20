@@ -1,0 +1,464 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Escena principal */
+#escena {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Mali", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+#fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #84bcb5;
+  pointer-events: none;
+  will-change: background-position;
+  image-rendering: optimizeSpeed;
+}
+
+#maleta {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+  width: 70rem;
+  height: 30rem;
+  background-image: url("./media/maleta.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#objetos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#foto {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#foto div {
+  position: absolute;
+  z-index: 9;
+}
+
+#ropa,
+#gafas,
+#zapatos,
+#libro,
+#camara {
+  position: absolute;
+  z-index: 15;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#ropa {
+  width: 18rem;
+  height: 14rem;
+  background-image: url("./media/camisetas.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 330px;
+  left: 550px;
+}
+
+#zapatos {
+  width: 11rem;
+  height: 7rem;
+  background-image: url("./media/chanclas.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 360px;
+  left: 750px;
+}
+
+#gafas {
+  width: 10rem;
+  height: 6rem;
+  background-image: url("./media/gafas.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 330px;
+  left: 835px;
+  transform: rotate(-30deg);
+}
+
+#libro {
+  width: 10rem;
+  height: 6rem;
+  background-image: url("./media/libro.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 470px;
+  left: 820px;
+}
+
+#camara {
+  width: 9rem;
+  height: 5rem;
+  background-image: url("./media/camara.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 460px;
+  left: 700px;
+  transform: rotate(-90deg);
+}
+
+.fuera-ropa {
+  transform: translateX(-250px) !important;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.fuera-zapatos {
+  transform: translateX(200px) !important;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.fuera-gafas {
+  transform: rotate(-30deg) translateX(200px) !important;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.fuera-libro {
+  transform: translateX(200px) !important;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.fuera-camara {
+  transform: rotate(-90deg) translateY(-550px) !important;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+#ropa:hover,
+#gafas:hover,
+#zapatos:hover,
+#libro:hover,
+#camara:hover {
+  transform: scale(1.05);
+}
+
+#gafas:hover {
+  transform: rotate(-30deg) scale(1.05);
+}
+
+#camara:hover {
+  transform: rotate(-90deg) scale(1.05);
+}
+
+#trozo1 {
+  width: 14rem;
+  height: 10rem;
+  background-image: url("./media/foto1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 500px;
+  left: 800px;
+}
+
+#trozo2 {
+  width: 14rem;
+  height: 10rem;
+  background-image: url("./media/foto2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 360px;
+  left: 750px;
+}
+
+#trozo3 {
+  width: 14rem;
+  height: 10rem;
+  background-image: url("./media/foto3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 400px;
+  left: 550px;
+  transform: rotate(30deg);
+}
+
+#trozo4 {
+  width: 14rem;
+  height: 10rem;
+  background-image: url("./media/foto4.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 400px;
+  left: 700px;
+}
+
+#trozo5 {
+  width: 14rem;
+  height: 10rem;
+  background-image: url("./media/foto5.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 350px;
+  left: 670px;
+  transform: rotate(90deg);
+}
+
+#instruccionBox {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 22.5%;
+  transform: translateX(-50%);
+  background-color: #707070;
+  color: white;
+  padding: 15px 25px;
+  border: 3px solid #7b91b0;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  z-index: 100;
+  max-width: 50%;
+  min-height: 95px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  word-wrap: break-word;
+  transform: translateZ(0);
+}
+
+/* Iconos */
+#iconoCasa,
+#iconoModo,
+#iconoFlecha,
+#btn-libreta,
+.switch {
+  transition: transform 0.2s ease, color 0.2s ease;
+  will-change: transform;
+}
+
+#iconoCasa {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  z-index: 1000;
+}
+
+#iconoModo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  z-index: 1000;
+}
+
+#iconoFlecha {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #000;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#iconoFlecha:hover {
+  transform: translateX(5px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  font-family: "Mali", cursive;
+  z-index: 2000;
+  will-change: opacity;
+}
+
+.modal-contenido {
+  background-color: #f8f7f3;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-contenido p {
+  font-size: 18px;
+  color: #000000;
+}
+
+.modal-contenido button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #94afc9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-contenido button:hover {
+  background-color: #f37f1c;
+}
+
+/* Ajustes */
+#panelAjustes {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  height: 390px;
+  background-image: url("./media/settings.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Mali", cursive;
+  display: none;
+  z-index: 100;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+#panelAjustes.visible {
+  display: block;
+}
+
+#panelAjustes .contenidoAjustes {
+  position: absolute;
+  bottom: 130px;
+  left: 20px;
+  right: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opcion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opcion p {
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  font-size: 18px;
+}
+
+.switch {
+  width: 110px;
+  height: auto;
+  cursor: pointer;
+}
+
+.switch:hover {
+  transform: scale(1.1);
+}
+
+/* Libreta */
+#btn-libreta {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  max-width: 52px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-image: url(./media/interior_libreta.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 550px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.tab-content {
+  position: absolute;
+  left: 21rem;
+  width: 200px;
+  top: 80px;
+}
+
+/* Optimización del rendimiento de CSS */
+/* Agregar aceleración por hardware para transiciones más suaves */
+.dialogue-box,
+#instruccionBox,
+#actionContainer,
+#panelAjustes {
+  transform: translateZ(0); /* Obliga al navegador a usar renderizado por GPU */
+}
+
+/* Optimizar imágenes de fondo */
+#fondo,
+#interior-tren {
+  will-change: background-position;
+  image-rendering: optimizeSpeed; /* Priorizar la velocidad sobre la calidad */
+}
+
+/* Mejorar el rendimiento de los modales */
+.modal {
+  will-change: opacity; /* Optimizar transiciones de los modales */
+}
+
+/* Optimizar transiciones */
+#iconoModo,
+#iconoCasa,
+#btn-libreta,
+.switch {
+  transition: transform 0.2s ease, color 0.2s ease; /* Tiempo de transición más corto */
+  will-change: transform; /* Optimizar transformaciones */
+}

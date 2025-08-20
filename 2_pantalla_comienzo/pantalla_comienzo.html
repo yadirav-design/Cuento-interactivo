@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leotolda: Misterio en movimiento</title>
+    <link rel="icon" type="image/png" href="./media/logo2.png" sizes="128x128"/>
+    <link rel="stylesheet" href="./estilos_comienzo.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="musicaFondo" autoplay loop muted>
+      <source src="./media/el_tren_misterioso.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="escena">
+  <div id="fondo"></div>
+  <div id="interior-tren"></div>
+  <div id="personajes">
+    <div id="personaje-1"></div>
+    <div id="personaje-2"></div>
+    <div id="personaje-3">
+      <div class="dialogue-box left" id="dialogueBox3" style="display: none">
+        <p id="dialogueText3"></p>
+      </div>
+    </div>
+    <div id="personaje-4">
+      <div class="dialogue-box right" id="dialogueBox4" style="display: none">
+        <p id="dialogueText4"></p>
+      </div>
+    </div>
+    <div id="actionContainer" class="action-container" style="display: none">
+      <p id="actionText"></p>
+    </div>
+    <div
+      id="instruccionBox"
+      class="dialogue-box instruccion"
+      style="display: none"
+    ></div>
+  </div>
+</div>
+
+    <!-- Iconos -->
+    <i id="iconoCasa" class="fa-solid fa-house" onclick="irALaCasa()"></i>
+    <div id="confirmacionModal" class="modal">
+      <div class="modal-contenido">
+        <p>¿Estás seguro de que quieres volver a la pantalla de inicio?</p>
+        <button id="confirmarBtn">Sí</button>
+        <button id="cancelarBtn">No</button>
+      </div>
+    </div>
+
+    <i id="iconoModo" class="fa-solid fa-gear" onclick="cambiarModo()"></i>
+    <div id="panelAjustes" class="oculto">
+      <div class="contenidoAjustes">
+        <div class="opcion">
+          <p>Música</p>
+          <img id="switchMusica" src="./media/on.png" class="switch" />
+        </div>
+        <div class="opcion">
+          <p>Sonido</p>
+          <img id="switchSonido" src="./media/on.png" class="switch" />
+        </div>
+      </div>
+    </div>
+
+    <i id="iconoFlecha" class="fa-solid fa-arrow-right"></i>
+
+    <!-- Icono para abrir libreta -->
+    <img id="btn-libreta" src="./media/icono_libreta.png" alt="Abrir libreta" />
+
+    <!-- Modal de la libreta -->
+    <div id="modal-libreta" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" data-modal="modal-libreta">&times;</span>
+
+    <!-- Contenedor principal -->
+    <div id="pantalla">
+      <!-- Contenido del Cuaderno -->
+      <div id="cuaderno">
+        <!-- Sección de Pistas -->
+        <div id="pistas" class="tab-content">
+          <h2>Pistas</h2>
+          <p>1º Leotolda es una <u>pasajera muy importante</u>.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./animaciones_comienzo.js"></script>
+  </body>
+</html>

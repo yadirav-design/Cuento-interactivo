@@ -1,0 +1,32 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  z-index: 9999;
+  font-family: "Henny Penny", system-ui;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+body {
+  background-image: url("1_pantalla_inicio/media/fondo_inicio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mensaje {
+  white-space: normal;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 55px;
+}

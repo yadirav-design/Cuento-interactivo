@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leotolda: Misterio en movimiento</title>
+    <link rel="icon" type="image/png" href="./media/logo2.png" sizes="128x128" />
+    <link rel="stylesheet" href="./estilos_minijuego1_1.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="musicaFondo" autoplay loop muted>
+      <source src="./media/el_tren_misterioso_2.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="escena">
+      <div id="fondo"></div>
+      <div id="libreta_minijuego"></div>
+
+      <!-- Puzzle -->
+      <div id="zonaEncaje">
+        <div class="target" id="target1"></div>
+        <div class="target" id="target2"></div>
+        <div class="target" id="target3"></div>
+        <div class="target" id="target4"></div>
+        <div class="target" id="target5"></div>
+      </div>
+
+      <img src="./media/foto1.png" class="trozo" id="trozo1" draggable="true" />
+      <img src="./media/foto2.png" class="trozo" id="trozo2" draggable="true" />
+      <img src="./media/foto3.png" class="trozo" id="trozo3" draggable="true" />
+      <img src="./media/foto4.png" class="trozo" id="trozo4" draggable="true" />
+      <img src="./media/foto5.png" class="trozo" id="trozo5" draggable="true" />
+
+      <div id="instruccionBox" class="dialogue-box instruccion"></div>
+    </div>
+
+    <!-- Iconos -->
+    <i id="iconoCasa" class="fa-solid fa-house"></i>
+    <div id="confirmacionModal" class="modal">
+      <div class="modal-contenido">
+        <p>¿Estás seguro de que quieres volver a la pantalla de inicio?</p>
+        <button id="confirmarBtn">Sí</button>
+        <button id="cancelarBtn">No</button>
+      </div>
+    </div>
+
+    <i id="iconoModo" class="fa-solid fa-gear"></i>
+    <div id="panelAjustes">
+      <div class="contenidoAjustes">
+        <div class="opcion">
+          <p>Música</p>
+          <img id="switchMusica" src="./media/on.png" class="switch" />
+        </div>
+        <div class="opcion">
+          <p>Sonido</p>
+          <img id="switchSonido" src="./media/on.png" class="switch" />
+        </div>
+      </div>
+    </div>
+
+    <img id="btn-libreta" src="./media/icono_libreta.png" alt="Abrir libreta" />
+
+    <div id="modal-libreta" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" data-modal="modal-libreta">&times;</span>
+        <div id="pantalla">
+          <div id="cuaderno">
+            <div id="pistas" class="tab-content">
+              <h2>Pistas</h2>
+              <p>1º Leotolda es una <u>pasajera muy importante</u>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./animaciones_minijuego1_1.js"></script>
+  </body>
+</html>

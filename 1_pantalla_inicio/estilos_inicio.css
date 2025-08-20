@@ -1,0 +1,214 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pantallaBienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  z-index: 9999;
+  font-family: "Henny Penny", system-ui;
+  font-weight: bold;
+}
+
+.contenidoBienvenida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  position: relative;
+  margin: 0;
+  top: -220px; /* Desplaza el contenido de texto ligeramente hacia arriba */
+}
+
+#escena {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./media/fondo_inicio.jpg") repeat-x;
+  background-size: cover; /* Ajustar la imagen al tamaño completo sin distorsionarla */
+  background-position: 0 0;
+  animation: moverFondo 30s linear infinite;
+}
+
+@keyframes moverFondo {
+  from {
+    background-position: 0 0; /* Comienza desde la izquierda */
+  }
+  to {
+    background-position: -100% 0; /* Desplazamiento total hacia la izquierda */
+  }
+}
+
+#tren {
+  position: absolute;
+  bottom: 22%;
+  left: 50%;
+  width: 1200px;
+  height: 400px;
+  background-image: url("./media/tren.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+}
+
+#boton {
+  text-decoration: none;
+  font-family: "Mali", cursive;
+  font-weight: 600;
+  font-style: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #c7b9c6;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+#boton.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#boton.visible:hover {
+  background-color: #f8d271;
+}
+
+#escena {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease, color 0.5s ease;
+}
+
+#titulo {
+  font-family: "Henny Penny", system-ui;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+#titulo.visible {
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%); /* Comienza en el centro */
+  }
+  50% {
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+#iconoModo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#iconoModo:hover {
+  transform: scale(1.1);
+}
+
+#panelAjustes {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  height: 390px;
+  background-image: url("./media/settings.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Mali", cursive;
+  display: none;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+#panelAjustes.visible {
+  display: block;
+}
+
+#panelAjustes .contenidoAjustes {
+  position: absolute;
+  bottom: 130px;
+  left: 20px;
+  right: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opcion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opcion p {
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  font-size: 18px;
+}
+
+.switch {
+  width: 110px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.switch:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leotolda: Misterio en movimiento</title>
+    <link rel="icon" type="image/png" href="./media/logo2.png" sizes="128x128" />
+    <link rel="stylesheet" href="./estilos_minijuego3.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="musicaFondo" autoplay loop muted>
+      <source src="./media/el_tren_misterioso_2.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="escena">
+      <div id="fondo"></div>
+      <div id="papel">
+        <div id="lineas">
+          <!-- LÍNEAS CORRECTAS -->
+          <div
+            id="linea18"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 12%; width: 89px"
+          ></div>
+          <div
+            id="linea11"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 21%; width: 89px"
+          ></div>
+          <div
+            id="linea25"
+            class="linea linea-vertical"
+            style="top: 11%; left: 47.5%; height: 87.5px"
+          ></div>
+          <div
+            id="linea30"
+            class="linea linea-vertical"
+            style="top: 43%; left: 29.9%; height: 88px"
+          ></div>
+          <div
+            id="linea34"
+            class="linea linea-vertical"
+            style="top: 59%; left: 21%; height: 88px"
+          ></div>
+          <div
+            id="linea39"
+            class="linea linea-vertical"
+            style="top: 75.6%; left: 12%; height: 89px"
+          ></div>
+
+          <!-- LÍNEAS INCORRECTAS -->
+          <div
+            id="wrong1"
+            class="linea linea-horizontal"
+            style="top: 26%; left: 2.5%; width: 91px"
+          ></div>
+          <div
+            id="wrong2"
+            class="linea linea-horizontal"
+            style="top: 26%; left: 11.6%; width: 91px"
+          ></div>
+          <div
+            id="wrong3"
+            class="linea linea-horizontal"
+            style="top: 26%; left: 20.6%; width: 91px"
+          ></div>
+          <div
+            id="wrong4"
+            class="linea linea-horizontal"
+            style="top: 26%; left: 47.6%; width: 97px"
+          ></div>
+          <div
+            id="wrong5"
+            class="linea linea-horizontal"
+            style="top: 42%; left: 47.6%; width: 97px"
+          ></div>
+          <div
+            id="wrong6"
+            class="linea linea-horizontal"
+            style="top: 42%; left: 21%; width: 89px"
+          ></div>
+          <div
+            id="wrong7"
+            class="linea linea-horizontal"
+            style="top: 42%; left: 12%; width: 89px"
+          ></div>
+          <div
+            id="wrong8"
+            class="linea linea-horizontal"
+            style="top: 42%; left: 2.5%; width: 89px"
+          ></div>
+          <div
+            id="wrong9"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 2.5%; width: 89px"
+          ></div>
+          <div
+            id="wrong10"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 47.6%; width: 97px"
+          ></div>
+          <div
+            id="wrong12"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 12%; width: 89px"
+          ></div>
+          <div
+            id="wrong13"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 39%; width: 80px"
+          ></div>
+          <div
+            id="wrong14"
+            class="linea linea-horizontal"
+            style="top: 58.5%; left: 31%; width: 80px"
+          ></div>
+          <div
+            id="wrong15"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 2.5%; width: 89px"
+          ></div>
+          <div
+            id="wrong16"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 47.6%; width: 97px"
+          ></div>
+          <div
+            id="wrong17"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 21%; width: 89px"
+          ></div>
+          <div
+            id="wrong19"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 39%; width: 80px"
+          ></div>
+          <div
+            id="wrong20"
+            class="linea linea-horizontal"
+            style="top: 75%; left: 31%; width: 80px"
+          ></div>
+          <!-- Líneas verticales incorrectas -->
+          <div
+            id="wrong21"
+            class="linea linea-vertical"
+            style="top: 11%; left: 12%; height: 87px"
+          ></div>
+          <div
+            id="wrong22"
+            class="linea linea-vertical"
+            style="top: 11%; left: 21%; height: 87px"
+          ></div>
+          <div
+            id="wrong23"
+            class="linea linea-vertical"
+            style="top: 11%; left: 30%; height: 87px"
+          ></div>
+          <div
+            id="wrong24"
+            class="linea linea-vertical"
+            style="top: 11%; left: 39%; height: 87.5px"
+          ></div>
+          <div
+            id="wrong26"
+            class="linea linea-vertical"
+            style="top: 27%; left: 12%; height: 88px"
+          ></div>
+          <div
+            id="wrong27"
+            class="linea linea-vertical"
+            style="top: 27%; left: 21%; height: 88px"
+          ></div>
+          <div
+            id="wrong28"
+            class="linea linea-vertical"
+            style="top: 43%; left: 12%; height: 88px"
+          ></div>
+          <div
+            id="wrong29"
+            class="linea linea-vertical"
+            style="top: 43%; left: 21%; height: 88px"
+          ></div>
+          <div
+            id="wrong30"
+            class="linea linea-vertical"
+            style="top: 43%; left: 39%; height: 88px"
+          ></div>
+          <div
+            id="wrong31"
+            class="linea linea-vertical"
+            style="top: 43%; left: 47.5%; height: 88px"
+          ></div>
+          <div
+            id="wrong32"
+            class="linea linea-vertical"
+            style="top: 59%; left: 29.9%; height: 88px"
+          ></div>
+          <div
+            id="wrong33"
+            class="linea linea-vertical"
+            style="top: 59%; left: 12%; height: 88px"
+          ></div>
+          <div
+            id="wrong35"
+            class="linea linea-vertical"
+            style="top: 59%; left: 39%; height: 88px"
+          ></div>
+          <div
+            id="wrong36"
+            class="linea linea-vertical"
+            style="top: 59%; left: 47.5%; height: 88px"
+          ></div>
+          <div
+            id="wrong37"
+            class="linea linea-vertical"
+            style="top: 75.5%; left: 47.5%; height: 88px"
+          ></div>
+          <div
+            id="wrong38"
+            class="linea linea-vertical"
+            style="top: 75.6%; left: 29.9%; height: 88px"
+          ></div>
+          <div
+            id="wrong40"
+            class="linea linea-vertical"
+            style="top: 75.6%; left: 39%; height: 88px"
+          ></div>
+          <div
+            id="wrong40"
+            class="linea linea-vertical"
+            style="top: 75.6%; left: 21%; height: 89px"
+          ></div>
+        </div>
+      </div>
+      <!-- Contador de líneas -->
+      <div id="contador">Líneas: 0/6</div>
+
+      <div id="instruccionBox" class="dialogue-box instruccion"></div>
+    </div>
+
+    <!-- Iconos -->
+    <i id="iconoCasa" class="fa-solid fa-house"></i>
+    <div id="confirmacionModal" class="modal">
+      <div class="modal-contenido">
+        <p>¿Estás seguro de que quieres volver a la pantalla de inicio?</p>
+        <button id="confirmarBtn">Sí</button>
+        <button id="cancelarBtn">No</button>
+      </div>
+    </div>
+
+    <i id="iconoModo" class="fa-solid fa-gear"></i>
+    <div id="panelAjustes">
+      <div class="contenidoAjustes">
+        <div class="opcion">
+          <p>Música</p>
+          <img id="switchMusica" src="./media/on.png" class="switch" />
+        </div>
+        <div class="opcion">
+          <p>Sonido</p>
+          <img id="switchSonido" src="./media/on.png" class="switch" />
+        </div>
+      </div>
+    </div>
+
+    <i id="iconoFlecha" class="fa-solid fa-arrow-right"></i>
+
+    <!-- Icono para abrir libreta -->
+    <img id="btn-libreta" src="./media/icono_libreta.png" alt="Abrir libreta" />
+
+    <!-- Modal de la libreta -->
+    <div id="modal-libreta" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" data-modal="modal-libreta">&times;</span>
+        <div id="pantalla">
+          <div id="cuaderno">
+            <div id="pistas" class="tab-content">
+              <h2>Pistas</h2>
+              <p>1º Leotolda es una <u>pasajera muy importante</u>.</p>
+              <p>2º Leotolda es <u>muy alegre</u>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./animaciones_minijuego3.js"></script>
+  </body>
+</html>

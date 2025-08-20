@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leotolda: Misterio en movimiento</title>
+    <link rel="icon" type="image/png" href="./media/logo2.png" sizes="128x128" />
+    <link rel="stylesheet" href="./estilos_exito.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="musicaFondo" autoplay loop muted>
+      <source src="./media/exito1.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="escena">
+      <div id="fondo"></div>
+      <div id="interior-tren"></div>
+      <div id="personajes">
+        <div id="personaje-3">
+        <!-- Primera imagen de la secuencia -->
+        <img
+          id="exito-img1"
+          src="./media/exito_1.png"
+          alt="Primer frame de éxito"
+        />
+        <!-- Segunda imagen de la secuencia -->
+        <img
+          id="exito-img2"
+          src="./media/exito_2.png"
+          alt="Segundo frame de éxito"
+        />
+        <!-- Tercera imagen de la secuencia (final) -->
+        <img
+          id="exito-img3"
+          src="./media/exito_fin.png"
+          alt="Frame final de éxito"
+        />
+
+        <div class="dialogue-box" id="dialogueBox3" style="display: none">
+        <p id="dialogueText3"></p>
+        </div>
+      </div>
+
+      <!-- Iconos -->
+      <i id="iconoCasa" class="fa-solid fa-house" onclick="irALaCasa()"></i>
+      <div id="confirmacionModal" class="modal">
+        <div class="modal-contenido">
+          <p>¿Estás seguro de que quieres volver a la pantalla de inicio?</p>
+          <button id="confirmarBtn">Sí</button>
+          <button id="cancelarBtn">No</button>
+        </div>
+      </div>
+
+      <i id="iconoModo" class="fa-solid fa-gear" onclick="cambiarModo()"></i>
+      <div id="panelAjustes" class="oculto">
+        <div class="contenidoAjustes">
+          <div class="opcion">
+            <p>Música</p>
+            <img id="switchMusica" src="./media/on.png" class="switch" />
+          </div>
+          <div class="opcion">
+            <p>Sonido</p>
+            <img id="switchSonido" src="./media/on.png" class="switch" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Icono para abrir libreta -->
+      <img id="btn-libreta" src="./media/icono_libreta.png" alt="Abrir libreta" />
+
+      <!-- Modal de la libreta -->
+      <div id="modal-libreta" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" data-modal="modal-libreta">&times;</span>
+          <div id="pantalla">
+            <div id="cuaderno">
+              <div id="pistas" class="tab-content">
+                <h2>Pistas</h2>
+                <p>1º Leotolda es una <u>pasajera muy importante</u>.</p>
+                <p>2º Leotolda es <u>muy alegre</u>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="./animaciones_exito.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leotolda: Misterio en movimiento</title>
+    <link rel="icon" type="image/png" href="./media/logo2.png" sizes="128x128" />
+    <link rel="stylesheet" href="./estilos_despedida.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="musicaFondo" autoplay loop muted>
+      <source src="./media/el_tren_misterioso.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="escena">
+      <div class="contenidoDespedida">
+        <h1>¡Gracias por jugar!</h1>
+      </div>
+      <div id="fondo"></div>
+      <div id="interior-tren"></div>
+      <div id="personajes">
+        <div id="personaje-1"></div>
+        <div id="personaje-2"></div>
+        <div id="personaje-3">
+          <div class="dialogue-box left" id="dialogueBox3" style="display: none">
+            <p id="dialogueText3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="actionContainer">
+        <p id="actionText"></p>
+      </div>
+      
+      <!-- Caja de instrucciones -->
+      <div id="instruccionBox"></div>
+    </div>
+
+    <!-- Iconos -->
+    <i id="iconoCasa" class="fa-solid fa-house" onclick="irALaCasa()"></i>
+    <div id="confirmacionModal" class="modal">
+      <div class="modal-contenido">
+        <p>¿Estás seguro de que quieres volver a la pantalla de inicio?</p>
+        <button id="confirmarBtn">Sí</button>
+        <button id="cancelarBtn">No</button>
+      </div>
+    </div>
+
+    <i id="iconoModo" class="fa-solid fa-gear" onclick="cambiarModo()"></i>
+    <div id="panelAjustes" class="oculto">
+      <div class="contenidoAjustes">
+        <div class="opcion">
+          <p>Música</p>
+          <img id="switchMusica" src="./media/on.png" class="switch" />
+        </div>
+        <div class="opcion">
+          <p>Sonido</p>
+          <img id="switchSonido" src="./media/on.png" class="switch" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./animaciones_despedida.js"></script>
+  </body>
+</html>
